@@ -23,7 +23,7 @@ cd project //路径转到这个项目所在的文件夹目录<br/>
 npm run dev //运行配置文件package.json<br/>
 <br/>
 ---------------------------------------------------<br/>
-如果要运行一个已经写好的代码，之前要先进行模块的安装
-npm install vue //安装vue
-npm install //安装package.json中需要的模块
-npm run dev //运行配置文件
+如果要运行一个已经写好的代码，之前要先进行模块的安装<br/>
+npm install vue //安装vue<br/>
+npm install //安装package.json中需要的模块<br/>
+npm run dev //运行配置文件<br/>
