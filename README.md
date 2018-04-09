@@ -29,6 +29,7 @@ npm install //安装package.json中需要的模块<br/>
 npm run dev //运行配置文件<br/>
 
 ## vuex
+### modules
 * 参考资料https://segmentfault.com/a/1190000009133424 https://vuex.vuejs.org/zh-cn/modules.html
 * store中当项目比较复杂，status比较多的时候，这时可以在store中应用module模块。每个module中有自己的state,mutation,action,getter。
 ```
