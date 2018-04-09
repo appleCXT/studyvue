@@ -55,3 +55,36 @@ const store = new Vuex.Store({
 //模块内部的数据：①内部state，模块内部的state是局部的，也就是模块私有的，比如是car.js模块state中的list数据，我们要通过this.$store.state.car.list获取；②内部getter、mutation和action，仍然注册在全局命名空间内，这是为了多模块可以同时响应同一mutation；this.$store.state.car.carGetter的结结果是undefined，而通过this.$store.state.carGetter则可以拿到。
 传参：getters====({state(局部状态),getters（全局getters对象）,roosState（根状态）})；actions====({state(局部状态),commit,roosState（根状态）}).
 ```
+### mutations
+* 事件注册，store状态提交给mutation，mutations是修改状态的方法。mutation中方法要求是同步的，不能有异步方法。
+### state
+* 状态
+### action
+* 提交mutation，方法可以是异步
+```
+const store = new Vuex.Store({
+  state: {
+    count: 0
+  },
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  },
+  actions: {
+    increment (context) {//context是store的一个实例
+      context.commit('increment')
+    }
+    //actions 还可以写成actions: {
+          increment ({ commit }) { //es6中的解构参数，context是store对象，commit是store里面的方法，所以可以直接写成{ commit }
+         commit('increment')
+      }
+    }
+    //上一行注释截止
+* 通过store.dispatch('increment')进行分发，触发mutation里面的increment方法。
+* store.dispatch('actionA').then(() => {
+  // 执行异步方法
+})
+  }
+})
+```
